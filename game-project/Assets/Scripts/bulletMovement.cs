@@ -13,6 +13,17 @@ public class bulletMovement : MonoBehaviour {
         //on the speed given by variable bulletSpeed from
         //the moment the bullet is created
         bullet.velocity = transform.right * bulletSpeed;
-	}
+        GetComponent<SpriteRenderer>().sortingLayerName = "projectile";
+
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "background")
+        {
+            Debug.Log(gameObject);
+            Destroy(gameObject);
+        }
+    }
 
 }
