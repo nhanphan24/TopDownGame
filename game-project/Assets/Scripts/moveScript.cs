@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class moveScript : MonoBehaviour {
     public float speed;
-    
+    private float horizonVec;
 
     private Rigidbody2D rb2d;
 	// Use this for initialization
 	void Start () {
         rb2d = GetComponent<Rigidbody2D>();
-	}
+        horizonVec = 50 * 0.2f * Time.deltaTime;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        transform.Translate(horizontal*speed, vertical*speed, 0);
+        
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        rb2d.transform.Translate(horizontal*speed, vertical*speed, 0);
 
     }
 }
