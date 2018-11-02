@@ -24,6 +24,11 @@ public class bulletMovement : MonoBehaviour {
             Debug.Log(gameObject);
             Destroy(gameObject);
         }
+
+        if (other.gameObject.name == "box")
+        {
+            Destroy(other.gameObject);
+        }
     }
 
 }

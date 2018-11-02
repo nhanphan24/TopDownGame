@@ -9,11 +9,14 @@ public class shooting : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // If "Fire2" is pressed down, then call the function Shoot
-        if (Input.GetButtonDown("Fire2")) 
+        if (Input.GetKey(KeyCode.Mouse0)) 
         {                                 
-            Shoot();                      
+            Shoot();
+            Debug.Log(KeyCode.Mouse0);
         }
 	}
+
+    
     
     //This function creates a bullet object
     void Shoot()
