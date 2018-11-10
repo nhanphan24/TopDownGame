@@ -6,7 +6,7 @@ public class enemy_shooting : MonoBehaviour {
 
     public Transform shootPoint;
     public GameObject enemy_bullet;
-    public int counter = 60;
+    public int counter = 0;
 	public int counter_value = 60;
     public Transform player;
     public enemy_movement enemyMovement;
