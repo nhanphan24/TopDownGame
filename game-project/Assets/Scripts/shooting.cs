@@ -9,10 +9,9 @@ public class shooting : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // If "Fire2" is pressed down, then call the function Shoot
-        if (Input.GetKey(KeyCode.Mouse0)) 
+        if (Input.GetKey(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse1)) 
         {                                 
             Shoot();
-            Debug.Log(KeyCode.Mouse0);
         }
 	}
 
