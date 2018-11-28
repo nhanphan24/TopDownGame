@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:game-project/Assets/Scripts/moveScript.cs.meta
 guid: 62825e86c0d693d4987085158d56f346
+=======
+guid: 1f38d863702b5d74b85a7aeca2fdda67
+>>>>>>> 11/9changes:game-project/Assets/Scripts/cameraPosition.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

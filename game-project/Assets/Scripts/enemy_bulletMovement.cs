@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class enemy_bulletMovement : MonoBehaviour {
 
-    public float bulletSpeed = 10f;
+    private float bulletSpeed = 15f;
     public Rigidbody2D enemy_bullet;
 
 	// Use this for initialization
 	void Start () {
-        //This function tells the bullet to move depends
-        //on the speed given by variable bulletSpeed from
-        //the moment the bullet is created
         enemy_bullet.velocity = transform.right * bulletSpeed;
         GetComponent<SpriteRenderer>().sortingLayerName = "projectile";
 
@@ -24,12 +21,10 @@ public class enemy_bulletMovement : MonoBehaviour {
         {
            	Destroy(other.gameObject);
            	Destroy(gameObject);
-           	//Debug.Log("OnCollisionEnter2D");
         }
 
         if (other.gameObject.name == "background")
         {
-          // Debug.Log(gameObject);
             Destroy(gameObject);
         }
 

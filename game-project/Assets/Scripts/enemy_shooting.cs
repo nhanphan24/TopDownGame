@@ -6,16 +6,27 @@ public class enemy_shooting : MonoBehaviour {
 
     public Transform shootPoint;
     public GameObject enemy_bullet;
-    public int counter = 60;
+    public int counter = 0;
 	public int counter_value = 60;
-	// Update is called once per frame
-	void Update () {
-        // If "Fire2" is pressed down, then call the function Shoot  
+    public Transform player;
+    public enemy_movement enemyMovement;
+    // Update is called once per frame
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("player").transform;
+    }
+
+    void Update () {
+        float distance = Vector3.Distance(player.transform.position, transform.position);
         counter--;
         if(counter <= 0)
         {
-        	Shoot();
-        	counter = counter_value;
+            if (enemyMovement.distance <= enemyMovement.huntingRange)
+            {
+                Shoot();
+            }
+            counter = counter_value;
         }                             
             
 	}

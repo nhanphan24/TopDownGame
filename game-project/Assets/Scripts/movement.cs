@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class movement : MonoBehaviour {
-
-    // These variables are for the movement of the player
-    // movement. Public variable speed lets us adjust how
-    // fast we want our player to move
  
-    public float speed = 10f;     
+    public float speed = 5f;     
     public Rigidbody2D player;
   
-
 	// Use this for initialization
 	void Start () {
 		
@@ -24,8 +19,6 @@ public class movement : MonoBehaviour {
         Vector2 move = new Vector2(moveHorizontal, moveVertical);
         player.velocity = move;
 
-        // Set the angle of the player to face the direction 
-        // that the player is moving in
         Vector3 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

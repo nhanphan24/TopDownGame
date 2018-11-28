@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bulletMovement : MonoBehaviour {
 
-    public float bulletSpeed = 15f;
+    private float bulletSpeed = 15f;
     public Rigidbody2D bullet;
 
 	// Use this for initialization
@@ -21,13 +21,13 @@ public class bulletMovement : MonoBehaviour {
     {
         if (other.gameObject.name == "background")
         {
-            Debug.Log(gameObject);
             Destroy(gameObject);
         }
 
-        if (other.gameObject.name == "enemy")
+        if (other.gameObject.tag == "enemy")
         {
             Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
 
